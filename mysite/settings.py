@@ -1,3 +1,4 @@
+import os
 """
 Django settings for mysite project.
 
@@ -119,3 +120,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
 LOGIN_URL = '/admin/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

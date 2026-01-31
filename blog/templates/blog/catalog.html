@@ -11,8 +11,16 @@
     <div class="product-list">
         {% for product in products %}
             <div class="post">
+                <!-- ДОБАВЛЕНО: вывод изображения -->
+                {% if product.image %}
+                    <div class="product-image">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 300px; border-radius: 10px; margin-bottom: 15px;">
+                    </div>
+                {% endif %}
+
                 <h3>{{ product.name }} — <b>{{ product.price }} руб.</b></h3>
                 <p>{{ product.description|linebreaksbr }}</p>
+
                 {% if user.is_authenticated %}
                     <a href="{% url 'product_remove' pk=product.pk %}" class="btn-delete" onclick="return confirm('Удалить товар?')">
                         <span>🗑</span> Удалить

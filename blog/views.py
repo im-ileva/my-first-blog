@@ -12,13 +12,15 @@ def catalog(request):
 
 def product_new(request):
     if request.method == "POST":
-        form = ProductForm(request.POST)
+        # ОБЯЗАТЕЛЬНО: добавляем request.FILES, чтобы картинка дошла до сервера
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
             return redirect('catalog')
     else:
         form = ProductForm()
     return render(request, 'blog/product_edit.html', {'form': form})
+
 
 # Удаление товара
 def product_remove(request, pk):
