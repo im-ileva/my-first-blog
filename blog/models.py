@@ -3,6 +3,16 @@ from django.db import models
 from django.utils import timezone
 
 
+class Product(models.Model):
+    name = models.CharField(max_length=200, verbose_name="Название товара")
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Стоимость")
+    description = models.TextField(blank=True, verbose_name="Описание")
+
+    def __str__(self):
+        return self.name
+
+
+
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)

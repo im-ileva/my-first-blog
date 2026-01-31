@@ -3,10 +3,28 @@ from django.utils import timezone
 from .models import Post
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
-
+from .models import Product
+from .forms import ProductForm
 
 def catalog(request):
-    return render(request, 'blog/catalog.html')
+    products = Product.objects.all()
+    return render(request, 'blog/catalog.html', {'products': products})
+
+def product_new(request):
+    if request.method == "POST":
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            product = form.save()
+            return redirect('catalog')
+    else:
+        form = ProductForm()
+    return render(request, 'blog/product_edit.html', {'form': form})
+
+# Удаление товара
+def product_remove(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    product.delete()
+    return redirect('catalog')
 
 
 def post_list(request):
