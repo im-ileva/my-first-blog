@@ -9,19 +9,32 @@
     </head>
     <body>
     <div class="page-header">
-        {% if user.is_authenticated %}
-            <!-- Плюсик и текст теперь в одном месте -->
-            <h1><a href="/">My blog</a></h1>
-            <div class="post-controls-header">
-                <a href="{% url 'post_new' %}" class="btn-add-combined">
-                    <span class="plus-icon">&#10010;</span> Добавить новый пост
+        <div class="header-content">
+            <!-- Левая часть: Название -->
+            <h1 class="logo">
+                <a href="/">
+                    <span class="logo-first">Amati</span><span class="logo-second">-Line</span>
                 </a>
+            </h1>
+
+            <!-- Центральная часть: Каталог -->
+            <nav class="main-nav">
+                <a href="{% url 'catalog' %}" class="nav-item">Каталог</a>
+            </nav>
+
+            <!-- Правая часть: Управление -->
+            <div class="top-menu-block">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'post_new' %}" class="btn-add-combined">
+                        <span class="plus-icon">✚</span> Добавить новый пост
+                    </a>
+                {% else %}
+                    <p class="auth-notice">Посты могут оставлять только авторизованные пользователи</p>
+                {% endif %}
             </div>
-        {% else %}
-            <h1><a href="/">My blog</a></h1>
-            <p style="font-size: 16px; color: #ffffff;">Посты могут оставлять только авторизованные пользователи</p>
-        {% endif %}
+        </div>
     </div>
+
     <div class="content container">
         <div class="row">
             <div class="col-md-8">

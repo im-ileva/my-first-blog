@@ -124,3 +124,65 @@ h1, h2, h3, h4 {
 .post-actions span {
     margin-right: 5px;
 }
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Распределяет элементы по краям и центру */
+    align-items: center; /* Выравнивает всё по вертикали */
+    max-width: 1200px; /* Чтобы на широких экранах не разъезжалось слишком сильно */
+    margin: 0 auto;
+}
+
+/* Стили для вкладки Каталог */
+.main-nav {
+    flex-grow: 1; /* Позволяет блоку занимать всё свободное место */
+    text-align: center; /* Центрирует текст внутри блока */
+}
+
+.nav-item {
+    color: #ffffff;
+    font-family: 'Lobster', cursive;
+    font-size: 20pt;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-bottom: 3px solid transparent; /* Заготовка под линию снизу */
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    color: #5d2e0a; /* Наш шоколадный цвет при наведении */
+    border-bottom: 3px solid #5d2e0a; /* Красивая линия снизу при наведении */
+    text-decoration: none;
+}
+
+/* Убираем старый float у заголовка и меню, так как теперь есть flex */
+.page-header h1 { margin: 0; }
+.top-menu-block { text-align: right; }
+
+
+/* Стили для первой части (Amati) */
+.logo-first {
+    color: #5d2e0a; /* Тёмно-шоколадный */
+    transition: 0.3s;
+}
+
+/* Стили для второй части (-Line) */
+.logo-second {
+    color: #ffffff; /* Белый */
+    transition: 0.3s;
+}
+
+/* Эффект при наведении на все название */
+.logo a:hover .logo-first {
+    color: #ffffff; /* Меняются цветами при наведении */
+}
+
+.logo a:hover .logo-second {
+    color: #5d2e0a;
+}
+
+/* Убираем стандартное подчеркивание ссылок для логотипа */
+.logo a, .logo a:hover {
+    text-decoration: none;
+}
