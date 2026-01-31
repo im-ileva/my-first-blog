@@ -55,3 +55,28 @@ h1, h2, h3, h4 {
 .post h1 a, .post h1 a:visited {
     color: #000000;
 }
+
+.btn-add-combined {
+    color: #ffffff; /* Текст оставляем белым */
+    font-size: 18pt;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.plus-icon {
+    color: #5d2e0a;
+    font-size: 24pt;
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: 0.3s; /* Плавное мигание при наведении */
+}
+
+.btn-add-combined:hover .plus-icon {
+    color: #ffffff; /* При наведении плюс станет белым */
+}
+
+.btn-add-combined:hover {
+    color: #5d2e0a; /* А текст станет коричневым */
+    text-decoration: none;
+}
