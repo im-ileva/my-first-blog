@@ -80,3 +80,47 @@ h1, h2, h3, h4 {
     color: #5d2e0a; /* А текст станет коричневым */
     text-decoration: none;
 }
+
+
+/* Контейнер для кнопок */
+.post-actions {
+    margin-bottom: 20px;
+}
+
+/* Общие стили для ссылок-кнопок */
+.btn-edit, .btn-delete {
+    font-family: 'Lobster', cursive;
+    font-size: 14pt;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Стили для "Редактировать" (Шоколадный) */
+.btn-edit {
+    color: #5d2e0a;
+    border: 1px solid #5d2e0a;
+}
+
+.btn-edit:hover {
+    background-color: #5d2e0a;
+    color: #ffffff;
+}
+
+/* Стили для "Удалить" (Мягкий красный/бордовый) */
+.btn-delete {
+    color: #a33b3b;
+    border: 1px solid #a33b3b;
+}
+
+.btn-delete:hover {
+    background-color: #a33b3b;
+    color: #ffffff;
+}
+
+/* Отдельный стиль для иконок внутри кнопок */
+.post-actions span {
+    margin-right: 5px;
+}

@@ -8,8 +8,8 @@
     </form>
     {% if post.pk %}
         <br>
-        <a class="btn btn-danger" href="{% url 'post_remove' pk=post.pk %}" onclick="return confirm('Точно удалить?')">
-            <span class="glyphicon glyphicon-trash"></span> Удалить
+        <a class="btn-delete" href="{% url 'post_remove' pk=post.pk %}" onclick="return confirm('Удалить этот пост?')">
+            <span>🗑</span> Удалить
         </a>
     {% endif %}
 {% endblock %}
