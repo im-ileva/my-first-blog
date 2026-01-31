@@ -6,4 +6,11 @@
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
+    {% if post.pk %}
+        <br>
+        <a href="{% url 'post_remove' pk=post.pk %}"
+           onclick="return confirm('Вы уверены, что хотите удалить этот пост?')">
+           Удалить этот пост
+        </a>
+    {% endif %}
 {% endblock %}
