@@ -1,0 +1,33 @@
+'''Шпаргалка по твоему проекту
+1. Как отправить код на GitHub (если просит пароль):
+ • Username: im-ileva
+ • Password: твой токен ghp_... (символы не видны).
+ • Если не пускает: git remote set-url origin https://ТВОЙ_ТОКЕН@://github.com
+
+2. Как обновить сайт на PythonAnywhere:
+ 1 Зайти в консоль (Bash).
+ 2 cd ~/ilea.pythonanywhere.com
+ 3 git fetch origin
+ 4 git reset --hard origin/main
+ 5 На вкладке Web нажать Reload.
+
+3. Важные настройки в settings.py:
+ • ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ilea.pythonanywhere.com']
+ • LANGUAGE_CODE = 'ru' (если будет ошибка KeyError, меняй на 'en-us'). 
+
+4. Удаление постов (ссылка в post_edit.html):
+
+{% if post.pk %}
+    <a href="{% url 'post_remove' pk=post.pk %}" onclick="return confirm('Удалить?')">Удалить</a>
+{% endif %}
+
+5. Если всё сломалось (откат назад):
+ 1 git log --oneline
+(найти номер коммита, нажать q для выхода).
+ 2 git reset --hard НОМЕР_КОММИТА
+ 3 git push -f origin main 
+
+Что сделать сейчас:
+Скопируй этот текст, создай в PyCharm новый файл commands.txt,
+вставь это туда и сделай последний git push.
+Так твоя инструкция будет храниться прямо внутри твоего кода на GitHub!'''
